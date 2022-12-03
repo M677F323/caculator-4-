@@ -12,15 +12,8 @@
             FontSize="Header"
             TextColor="Black"
             HorizontalOptions="Start" />
-        <ListView ItemsSource="{Binding historyExpressions}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label TextDecorations="Underline" TextColor="{DynamicResource Light}"  Text=" "></Label>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
+      
 
 
     </VerticalStackLayout>
