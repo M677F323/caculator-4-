@@ -19,13 +19,9 @@ namespace Calculator
         private ObservableCollection<CalculationHistory> calcualtionHistory;
         private SQLliteConnection SqlConnection;
 
-        public HistoryViewModel()
-        {
-            calcualtionHistory = new ObservableCollection<CalculationHistory>();
-            SqlConnection=new SQLliteConnection();
 
-            Init();
-        }
+
+
 
         public async void Add(String calculation)
         {
