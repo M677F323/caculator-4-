@@ -25,6 +25,7 @@ public static class Calculator
         return result;
     }
 }
+
 public static class DoubleExtensions
 {
     public static string ToTrimmedString(this double target, string decimalFormat)
