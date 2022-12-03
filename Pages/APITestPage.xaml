@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.Pages.APITestPage"
+             Title="APITestPage">
+    <VerticalStackLayout>
+        <Label x:Name="questionText" FontSize="64" FontAttributes="Bold" Margin="10" ></Label>
+        <Button x:Name="optionOneBtn" Clicked="onOptionClicked" Margin="10"></Button>
+        <Button x:Name="optionTwoBtn" Clicked="onOptionClicked" Margin="10"></Button>
+        <Button x:Name="optionThreeBtn" Clicked="onOptionClicked" Margin="10"></Button>
+    </VerticalStackLayout>
+</ContentPage>

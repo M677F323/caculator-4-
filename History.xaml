@@ -12,8 +12,6 @@
             FontSize="Header"
             TextColor="Black"
             HorizontalOptions="Start" />
-
-      
         <ListView ItemsSource="{Binding historyExpressions}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -23,6 +21,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
 
     </VerticalStackLayout>
 </ContentPage>
