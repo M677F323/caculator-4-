@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Calculator.Models;
+ 
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -6,6 +8,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static Android.Content.ClipData;
 
 namespace Calculator
 {
@@ -13,26 +16,54 @@ namespace Calculator
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private ObservableCollection<String> ExpressionHistory;
+        private ObservableCollection<CalculationHistory> calcualtionHistory;
+        private SQLliteConnection SqlConnection;
 
         public HistoryViewModel()
         {
-            ExpressionHistory = new ObservableCollection<String>();
+            calcualtionHistory = new ObservableCollection<CalculationHistory>();
+            SqlConnection=new SQLliteConnection();
+
+            Init();
         }
 
-        public void Add(String calculation)
+        public async void Add(String calculation)
         {
-            ExpressionHistory.Add(calculation);
-            OnPropertyChanged("historyExpressions");
+            var historyModel = new CalculationHistory();
+            historyModel.calculatedItem = calculation;
+            await SqlConnection.SaveItemAsync(historyModel);
+            await Init();
+            OnPropertyChanged("history");
+            OnPropertyChanged("history");
+            OnPropertyChanged();
             OnPropertyChanged();
         }
 
-        public ObservableCollection<String> historyExpressions
+        public async Task Init()
         {
-            get => ExpressionHistory;
+            var res = await SqlConnection.GetHistoryAsync();
+            calcualtionHistory = new ObservableCollection<CalculationHistory>();
+            res.ForEach(calcualtionHistory.Add);
+        }
+
+        public async Task clearDatabase()
+        {
+            calcualtionHistory = new ObservableCollection<CalculationHistory>();
+            OnPropertyChanged("history");
+            await SqlConnection.DeleteAllAsync();
+            await Init();
+            OnPropertyChanged("history");
+            OnPropertyChanged();
+            OnPropertyChanged();
+        }
+
+
+
+        public ObservableCollection<CalculationHistory> historyExpressions
+        {
+            get => calcualtionHistory;
         }
 
         public void OnPropertyChanged([CallerMemberName] string name = "") => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-
     }
 }

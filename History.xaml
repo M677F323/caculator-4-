@@ -2,19 +2,26 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculator.History"
-             Title="History" BackgroundColor="AntiqueWhite">
+             Title="History">
     <VerticalStackLayout>
+
+        <Button Text="Clear History" Clicked="Clear_Clicked" WidthRequest="300"/>
         <Label 
             Text="History of calculated expressions: "
             VerticalOptions="Start" 
             FontSize="Header"
-            
-            
             TextColor="Black"
             HorizontalOptions="Start" />
-        <ListView  ItemsSource="{Binding historyExpressions}" BackgroundColor="AntiqueWhite">
-
-
+        <ListView ItemsSource="{Binding historyExpressions}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label TextDecorations="Underline" TextColor="{DynamicResource Light}"  Text=" "></Label>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
+
+
     </VerticalStackLayout>
 </ContentPage>

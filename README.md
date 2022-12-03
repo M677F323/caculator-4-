@@ -1,44 +1,22 @@
-# Calculator History
+# Calculator
 veerasekhar patibandla
-Initial commit and upload
-Added pages
-HistoryViewModel.cs(OnPropertyChanged())&ExpressionHistory.Add(calculation);
-History.xaml.cs
+Initial commit ->150cfeab0195a750a0678cf85a54d92e1ad4888e
+Added Navigation->> 693b90b2556b7e36012d5787c13dc9be00f31d01
+Added pages->1b2142871a8b75bf5c5d788eacc61d9553d4698d
 merged pull request ->> dheeraj reddy3
-merged pull request->dheeraj reddy2
-merged pull request-> harshavardhan 
-modified the list view 
-updated history view model.cs(HistoryViewModel())
- 
+merged pull request#3->dheeraj reddy2
+merged pull request#5-> harshavardhan 
+updated calculator.page.xaml.cs
 
 
 Dheeraj reddy badduri:
-Updated calculator page
-added history.xaml.cs
-updated HistoryViewmodel.cs(Add(String calculation))
+Updated calculator page->26c705bfd3ccb2ce22a657f733beee473b71cef0
 updated About page
-updated history view model.cs(ObservableCollection<String> historyExpressions)
-merged pull request-> veerasekhar patibandla
+merged pull request#2
+merged pull request#3
 
 Harshavardhan guttikonda:
-updated History.xaml.cs(ExpressionHistory.Add(calculation);)
-updated History.xaml
-modified the list view 
-updated history view model.cs
-merged pull request-> dheeraj reddy
-
-YOUTUBELINK:https://youtu.be/NW3UThXvFHI
-
-GITHUB REPOSITORY LINK:
-
-Veerasekhar Patibandla:
-https://github.com/M677F323/calculator-3.git
-
-Dheeraj Reddy :
-https://github.com/dheerajreddybadduri/calculator3.git
-
-Harshavardhan:
-https://github.com/Harshavardhanguttikonda/calculato
-r-3.git
-
+updated claculator page.xaml.cs
+updated home page.xaml
+updated Homepage.xaml.cs
 
