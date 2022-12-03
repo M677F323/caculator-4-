@@ -27,17 +27,7 @@ namespace Calculator
             Init();
         }
 
-        public async void Add(String calculation)
-        {
-            var historyModel = new CalculationHistory();
-            historyModel.calculatedItem = calculation;
-            await SqlConnection.SaveItemAsync(historyModel);
-            await Init();
-            OnPropertyChanged("history");
-            OnPropertyChanged("history");
-            OnPropertyChanged();
-            OnPropertyChanged();
-        }
+
 
 
 
