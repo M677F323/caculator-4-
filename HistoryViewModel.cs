@@ -39,12 +39,7 @@ namespace Calculator
             OnPropertyChanged();
         }
 
-        public async Task Init()
-        {
-            var res = await SqlConnection.GetHistoryAsync();
-            calcualtionHistory = new ObservableCollection<CalculationHistory>();
-            res.ForEach(calcualtionHistory.Add);
-        }
+
 
 
 
