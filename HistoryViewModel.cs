@@ -49,16 +49,9 @@ namespace Calculator
             res.ForEach(calcualtionHistory.Add);
         }
 
-        public async Task clearDatabase()
-        {
-            calcualtionHistory = new ObservableCollection<CalculationHistory>();
-            OnPropertyChanged("history");
-            await SqlConnection.DeleteAllAsync();
-            await Init();
-            OnPropertyChanged("history");
-            OnPropertyChanged();
-            OnPropertyChanged();
-        }
+
+
+
 
 
 
